@@ -89,52 +89,30 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ObtengoInformacionDelUsuario workflow" sap:VirtualizedContainerService.HintSize="334,113.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="ObtengoInformacionDelUsuario.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="nombre">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="nombre" />
-        </OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="mail">
-          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="email" />
-        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="nombre">[nombre]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="mail">[email]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke FiltrarPorTopico workflow" sap:VirtualizedContainerService.HintSize="334,113.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="FiltrarPorTopico.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="preguntasTablaFiltrada">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="preguntasTablaFiltrada" />
-        </OutArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="preguntasTabla">
-          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="preguntasTabla" />
-        </InArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="preguntasTablaFiltrada">[preguntasTablaFiltrada]</OutArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="preguntasTabla">[preguntasTabla]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke PreguntarAlUsuario workflow" sap:VirtualizedContainerService.HintSize="334,113.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="PreguntarAlUsuario.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="preguntasTablaFiltrada">
-          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="preguntasTablaFiltrada" />
-        </InArgument>
-        <InOutArgument x:TypeArguments="x:Int32" x:Key="puntaje">
-          <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="puntaje" />
-        </InOutArgument>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt_trivia">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_trivia" />
-        </OutArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="preguntasTablaFiltrada">[preguntasTablaFiltrada]</InArgument>
+        <InOutArgument x:TypeArguments="x:Int32" x:Key="puntaje">[puntaje]</InOutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt_trivia">[dt_trivia]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Puntaje: &quot; + puntaje.ToString]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Puntaje: &quot; + puntaje.ToString + &quot;!!&quot;]" />
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke EnviarMail workflow" sap:VirtualizedContainerService.HintSize="334,113.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="EnviarMail.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="nombre">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="nombre" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="email">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="email" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Int32" x:Key="puntaje">
-          <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="puntaje" />
-        </InArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_trivia">
-          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_trivia" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="nombre">[nombre]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="email">[email]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="puntaje">[puntaje]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_trivia">[dt_trivia]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
