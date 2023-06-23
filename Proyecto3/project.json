@@ -50,6 +50,12 @@
       "uniqueId": "f2394598-b9c1-4919-aea3-06842a400558",
       "input": [],
       "output": []
+    },
+    {
+      "filePath": "RankingGlobal.xaml",
+      "uniqueId": "10c5c636-ac00-4d0a-a507-4edb74cd05f3",
+      "input": [],
+      "output": []
     }
   ],
   "isTemplate": false,
